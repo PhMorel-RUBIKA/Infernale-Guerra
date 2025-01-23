@@ -1,15 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download Files</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Vérification de code</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        input, button {
+            font-size: 1.2em;
+            padding: 10px;
+            margin: 10px;
+        }
+        .error {
+            color: red;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Download Your File!</h1>
-        <a href="https://dl.patchkit.net/d/2efd3m3brmom4ztuvg42c/direct" class="download-btn">Download Game</a>
-    </div>
+    <h2>Veuillez entrer le code d'accès</h2>
+    <input type="text" id="codeInput" placeholder="Entrez le code">
+    <button onclick="verifierCode()">Valider</button>
+    <p id="message" class="error"></p>
+
+    <script>
+        function verifierCode() {
+            var codeSaisi = document.getElementById('codeInput').value;
+            var codeCorrect = "666";  // Remplacez par le code de votre choix
+            var lienRedirection = "https://dl.patchkit.net/d/2efd3m3brmom4ztuvg42c/direct"; // Remplacez par votre lien
+
+            if (codeSaisi === codeCorrect) {
+                window.location.href = lienRedirection;
+            } else {
+                document.getElementById('message').innerText = "Code incorrect. Veuillez réessayer.";
+            }
+        }
+    </script>
 </body>
 </html>
