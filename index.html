@@ -1,43 +1,86 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vérification de code</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 100px;
-        }
-        input, button {
-            font-size: 1.2em;
-            padding: 10px;
-            margin: 10px;
-        }
-        .error {
-            color: red;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page de Redirection</title>
+  <style>
+    /* Style global pour centrer le contenu et définir une police simple */
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Style pour le bouton central */
+    .central-button {
+      background-color: #007BFF; /* Couleur de fond */
+      color: #fff; /* Couleur du texte */
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2em;
+      cursor: pointer;
+      margin-bottom: 30px; /* Espace entre le bouton central et les boutons secondaires */
+      transition: background-color 0.3s;
+    }
+
+    .central-button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Conteneur pour les boutons secondaires */
+    .small-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px; /* Espace entre les boutons */
+      justify-content: center;
+    }
+
+    /* Style pour chaque bouton secondaire */
+    .small-button {
+      background-color: #28A745;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .small-button:hover {
+      background-color: #1e7e34;
+    }
+  </style>
 </head>
 <body>
-    <h2>Veuillez entrer le code d'accès</h2>
-    <input type="text" id="codeInput" placeholder="Entrez le code">
-    <button onclick="verifierCode()">Valider</button>
-    <p id="message" class="error"></p>
+  <!-- Bouton central de redirection -->
+  <!-- Changez le texte "Bouton Central" et le lien URL dans window.location.href -->
+  <button class="central-button" onclick="window.location.href='https://www.example.com';">
+    Bouton Central
+  </button>
 
-    <script>
-        function verifierCode() {
-            var codeSaisi = document.getElementById('codeInput').value;
-            var codeCorrect = "666";  // Remplacez par le code de votre choix
-            var lienRedirection = "https://dl.patchkit.net/d/2efd3m3brmom4ztuvg42c/direct"; // Remplacez par votre lien
-
-            if (codeSaisi === codeCorrect) {
-                window.location.href = lienRedirection;
-            } else {
-                document.getElementById('message').innerText = "Code incorrect. Veuillez réessayer.";
-            }
-        }
-    </script>
+  <!-- Conteneur pour les boutons secondaires -->
+  <div class="small-buttons">
+    <!-- Bouton secondaire 1 -->
+    <!-- Changez le texte "Bouton 1" et le lien URL -->
+    <button class="small-button" onclick="window.location.href='https://www.lien1.com';">
+      Bouton 1
+    </button>
+    <!-- Bouton secondaire 2 -->
+    <button class="small-button" onclick="window.location.href='https://www.lien2.com';">
+      Bouton 2
+    </button>
+    <!-- Bouton secondaire 3 -->
+    <button class="small-button" onclick="window.location.href='https://www.lien3.com';">
+      Bouton 3
+    </button>
+    <!-- Vous pouvez ajouter autant de boutons secondaires que nécessaire -->
+  </div>
 </body>
 </html>
