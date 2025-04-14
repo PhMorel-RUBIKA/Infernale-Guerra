@@ -19,19 +19,18 @@
 
     /* LEFT SECTION: IMAGE */
     .image-section {
-      width: 30%;                 /* Half the screen */
+      width: 31.8%;                 /* Half the screen */
       background-size: cover;     /* Adjust the image to fill container */
       background-position: center;
       /* REPLACE THE BACKGROUND IMAGE BELOW: */
-      background-image: <img src="Key_art_Vertical.png";
-      /* If you prefer an <img> tag instead, you can remove these styles 
-         and simply put an <img> inside .image-section with width:100%; 
+      /* If you prefer an <img> tag instead, you can remove these styles
+         and simply put an <img> inside .image-section with width:100%;
          height:auto; etc. */
     }
 
     /* RIGHT SECTION: BUTTONS WRAPPER */
     .buttons-section {
-      width: 50%;
+      width: 68.2%;
       display: grid;
       /* 2 columns wide, 3 rows total.
          But the top row is merged to create one big button. */
@@ -48,15 +47,23 @@
 
     /* GENERAL BUTTON STYLES */
     .slick-button {
-      display: inline-block;
+      display: flex;                     /* Use Flexbox for layout */
+      align-items: center;               /* Vertically center content */
+      justify-content: center;           /* Horizontally center content (optional) */
       padding: 15px 20px;
+
       text-align: center;
-      text-decoration: none;       /* No underline */
-      border: 2px solid #444;      /* Outline color */
-      border-radius: 10px;         /* Rounded corners */
-      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15); /* Light shadow */
-      color: #444;                 /* Default text color */
-      background-color: #fff;      /* Default button background */
+      text-decoration: none; /* Remove underline */
+      color: #444;                       /* Default text color */
+      font-size: 36px;
+      font-family: Bahnschrift;
+      font-weight: bold;
+
+      border: 2px solid #f6f6f6;            /* Outline color */
+      border-radius: 10px;               /* Rounded corners */
+      box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.10); /* Light shadow */
+      background-color: #fff;            /* Default background */
+
       transition: background-color 0.3s, color 0.3s, border-color 0.3s;
       cursor: pointer;
     }
@@ -64,9 +71,9 @@
     /* HOVER EFFECTS */
     .slick-button:hover {
       /* Change text color, background, border, etc., on hover */
-      color: #fff;
+      color: #444444;
       background-color: #444;      /* Or any color you want */
-      border-color: #444;
+      border-color: #535353;
     }
 
     /* OPTIONAL: RESPONSIVE BREAKPOINT */
@@ -91,52 +98,51 @@
   <div class="image-section">
     <!-- Alternatively, if you prefer an <img> tag:
          <img src="your-image.jpg" alt="Left Side Image" style="width:100%; height:auto;" />
-         Remove the background-image in CSS above if you do this. 
+         Remove the background-image in CSS above if you do this.
     -->
-  </div>
-
+    <img src="Key_art_Vertical.png" height=auto width=100%/></div>
   <!-- RIGHT SIDE: BUTTONS -->
   <div class="buttons-section">
 
     <!-- A SINGLE LARGE BUTTON (spanning two columns) -->
     <a 
-      href="https://example.com"     
+      href="https://dl.patchkit.net/d/2efd3m3brmom4ztuvg42c/direct"
       class="slick-button big-button" 
-      style="background-color: #ffa500;"
+      style="background-color: #373737; color: #f6f6f6; font-size: 48px; "
     >
-      My Big Button (Top Row)
+      Download Launcher
     </a>
 
     <!-- SECOND ROW: TWO BUTTONS SIDE BY SIDE -->
     <a 
-      href="https://example.com/button1" 
+      href="https://forms.gle/fyYkedPR8Ccovmkj8"
       class="slick-button"
-      style="background-color: #d3d3d3;"
+      style="background-color: #ffffff;"
     >
-      Button 1
+      Main Forms
     </a>
     <a 
       href="https://example.com/button2" 
       class="slick-button"
-      style="background-color: #d3d3d3;"
+      style="background-color: #ffdada;"
     >
-      Button 2
+      Other Forms
     </a>
 
     <!-- THIRD ROW: TWO BUTTONS SIDE BY SIDE -->
     <a 
       href="https://example.com/button3" 
       class="slick-button"
-      style="background-color: #d3d3d3;"
+      style="background-color: #ffdada;"
     >
-      Button 3
+      About Burning Mug
     </a>
     <a 
       href="https://example.com/button4" 
       class="slick-button"
-      style="background-color: #d3d3d3;"
+      style="background-color: #ffdada;"
     >
-      Button 4
+      Our Links
     </a>
 
   </div>
