@@ -1,89 +1,144 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page de Redirection</title>
+  <meta charset="UTF-8" />
+  <title>My Slick Buttons Page</title>
   <style>
-    /* Style global : centrer le contenu verticalement et horizontalement */
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
+    /* RESET / BASE STYLES */
+    * {
       margin: 0;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
 
-    /* Emplacement du logo */
-    .logo {
-      margin-bottom: 100px; /* Espace entre le logo et les boutons */
+    body {
+      display: flex;              /* Allows side-by-side sections */
+      min-height: 100vh;          /* Full viewport height */
     }
 
-    /* Style pour le bouton central (plus grand) */
-    .central-button {
-      background-color: #007BFF; /* Couleur de fond */
-      color: #fff;             /* Couleur du texte */
-      padding: 20px 40px;      /* Plus de padding pour agrandir le bouton */
-      border: none;
-      border-radius: 8px;
-      font-size: 1.5em;        /* Texte plus grand */
+    /* LEFT SECTION: IMAGE */
+    .image-section {
+      width: 50%;                 /* Half the screen */
+      background-size: cover;     /* Adjust the image to fill container */
+      background-position: center;
+      /* REPLACE THE BACKGROUND IMAGE BELOW: */
+      background-image: url("https://via.placeholder.com/600x800");
+      /* If you prefer an <img> tag instead, you can remove these styles 
+         and simply put an <img> inside .image-section with width:100%; 
+         height:auto; etc. */
+    }
+
+    /* RIGHT SECTION: BUTTONS WRAPPER */
+    .buttons-section {
+      width: 50%;
+      display: grid;
+      /* 2 columns wide, 3 rows total.
+         But the top row is merged to create one big button. */
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px;           /* Space between buttons */
+      padding: 40px;           /* Some breathing room on the right side */
+      background-color: #f6f6f6; /* Light background to differentiate */
+    }
+
+    /* A single large button spanning both columns (first row) */
+    .big-button {
+      grid-column: 1 / 3; /* Span from column 1 to column 3 (i.e., covers both columns) */
+    }
+
+    /* GENERAL BUTTON STYLES */
+    .slick-button {
+      display: inline-block;
+      padding: 15px 20px;
+      text-align: center;
+      text-decoration: none;       /* No underline */
+      border: 2px solid #444;      /* Outline color */
+      border-radius: 10px;         /* Rounded corners */
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15); /* Light shadow */
+      color: #444;                 /* Default text color */
+      background-color: #fff;      /* Default button background */
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
       cursor: pointer;
-      transition: background-color 0.3s;
-      margin-bottom: 40px;     /* Espace entre le bouton central et les boutons secondaires */
     }
 
-    .central-button:hover {
-      background-color: #0056b3;
-    }
-
-    /* Conteneur pour les boutons secondaires */
-    .small-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px; /* Espace entre les boutons */
-      justify-content: center;
-    }
-
-    /* Style pour chaque bouton secondaire (également agrandi) */
-    .small-button {
-      background-color: #28A745;
+    /* HOVER EFFECTS */
+    .slick-button:hover {
+      /* Change text color, background, border, etc., on hover */
       color: #fff;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 8px;
-      font-size: 1.2em;
-      cursor: pointer;
-      transition: background-color 0.3s;
+      background-color: #444;      /* Or any color you want */
+      border-color: #444;
     }
 
-    .small-button:hover {
-      background-color: #1e7e34;
+    /* OPTIONAL: RESPONSIVE BREAKPOINT */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column; /* Stack image on top of buttons on smaller screens */
+      }
+      .image-section, .buttons-section {
+        width: 100%;
+      }
+      .buttons-section {
+        grid-template-columns: 1fr; /* Only one column on very small devices */
+      }
+      .big-button {
+        grid-column: auto;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Emplacement pour le logo -->
-  <!-- Remplacez "logo.png" par le chemin de votre logo -->
-  <div class="logo">
-    <img src="title_trans.png" alt="Logo" style="max-width: 400px;">
+  <!-- LEFT SIDE: IMAGE -->
+  <div class="image-section">
+    <!-- Alternatively, if you prefer an <img> tag:
+         <img src="your-image.jpg" alt="Left Side Image" style="width:100%; height:auto;" />
+         Remove the background-image in CSS above if you do this. 
+    -->
   </div>
 
-  <!-- Bouton central de redirection -->
-  <!-- Changez le texte "Bouton Central" et le lien URL dans window.location.href -->
-  <button class="central-button" onclick="window.location.href='https://dl.patchkit.net/d/2efd3m3brmom4ztuvg42c/direct';">
-    Download Launcher
-  </button>
+  <!-- RIGHT SIDE: BUTTONS -->
+  <div class="buttons-section">
 
-  <!-- Conteneur pour les boutons secondaires -->
-  <div class="small-buttons">
-    <!-- Bouton secondaire 1 -->
-    <!-- Changez le texte "Bouton 1" et l'URL de redirection -->
-    <button class="small-button" onclick="window.location.href='https://forms.gle/fyYkedPR8Ccovmkj8';">
-      Forms Principal
-    </button>
+    <!-- A SINGLE LARGE BUTTON (spanning two columns) -->
+    <a 
+      href="https://example.com"           <!-- Link to open when clicked -->
+      class="slick-button big-button"      <!-- Classes for styling and grid column span -->
+      style="background-color: #ffa500;"   <!-- You can override the default BG or text color -->
+    >
+      My Big Button (Top Row)
+    </a>
+
+    <!-- SECOND ROW: TWO BUTTONS SIDE BY SIDE -->
+    <a 
+      href="https://example.com/button1" 
+      class="slick-button"
+      style="background-color: #d3d3d3;"
+    >
+      Button 1
+    </a>
+    <a 
+      href="https://example.com/button2" 
+      class="slick-button"
+      style="background-color: #d3d3d3;"
+    >
+      Button 2
+    </a>
+
+    <!-- THIRD ROW: TWO BUTTONS SIDE BY SIDE -->
+    <a 
+      href="https://example.com/button3" 
+      class="slick-button"
+      style="background-color: #d3d3d3;"
+    >
+      Button 3
+    </a>
+    <a 
+      href="https://example.com/button4" 
+      class="slick-button"
+      style="background-color: #d3d3d3;"
+    >
+      Button 4
+    </a>
+
   </div>
 </body>
 </html>
