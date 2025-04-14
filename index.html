@@ -19,9 +19,11 @@
 
     /* LEFT SECTION: IMAGE */
     .image-section {
-      width: 31.8%;                 /* Half the screen */
+      width: 30%;
+      padding: 40px 0px 40px 40px;
       background-size: cover;     /* Adjust the image to fill container */
       background-position: center;
+      display: flex;
       /* REPLACE THE BACKGROUND IMAGE BELOW: */
       /* If you prefer an <img> tag instead, you can remove these styles
          and simply put an <img> inside .image-section with width:100%;
@@ -30,14 +32,14 @@
 
     /* RIGHT SECTION: BUTTONS WRAPPER */
     .buttons-section {
-      width: 68.2%;
+      width: 70%;
       display: grid;
       /* 2 columns wide, 3 rows total.
          But the top row is merged to create one big button. */
       grid-template-columns: 1fr 1fr;
       grid-gap: 20px;           /* Space between buttons */
       padding: 40px;           /* Some breathing room on the right side */
-      background-color: #f6f6f6; /* Light background to differentiate */
+      background-color: #ffffff; /* Light background to differentiate */
     }
 
     /* A single large button spanning both columns (first row) */
@@ -100,7 +102,7 @@
          <img src="your-image.jpg" alt="Left Side Image" style="width:100%; height:auto;" />
          Remove the background-image in CSS above if you do this.
     -->
-    <img src="Key_art_Vertical.png" height=auto width=100%/></div>
+    <img src="Key_art_Vertical.png" height=auto width=100%></div>
   <!-- RIGHT SIDE: BUTTONS -->
   <div class="buttons-section">
 
